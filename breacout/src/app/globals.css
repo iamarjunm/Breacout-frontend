@@ -25,3 +25,14 @@ body {
     text-wrap: balance;
   }
 }
+@font-face {
+  font-family: 'AstroLab';
+  src: url('/fonts/Astrolab.ttf') format('ttf'),
+       url('/fonts/Astrolab.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.custom-font {
+  font-family: 'AstroLab', sans-serif;
+}
+

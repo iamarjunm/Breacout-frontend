@@ -3,7 +3,10 @@ import { Alert, Button, Spinner } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 
+
+
 const Home = () => {
+
   const [formData, setFormData] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -40,9 +43,6 @@ const Home = () => {
         navigate("/sign-in");
       }
     } catch (error) {
-      const timer = setTimeout(() => {
-        setErrorMessage(null);
-      }, 5000);
       setErrorMessage(error.message);
       setLoading(false);
     }
@@ -59,9 +59,9 @@ const Home = () => {
     <div className="h-screen w-full">
       <div className="h-full flex-col flex justify-center items-center">
         <div>
-          <h1 className="text-5xl font-bold text-center">
-            WELCOME TO
-            <br /> BREACOUT
+          <h1 className=" font-bold text-center">
+            <span className="text-2xl">WELCOME TO</span>
+            <br /><span className="text-5xl custom-font">BREACOUT</span> 
           </h1>
         </div>
         <div>
