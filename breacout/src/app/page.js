@@ -1,6 +1,6 @@
 "use client";
 import { Alert, Button, Spinner } from "flowbite-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 
 const Home = () => {
@@ -30,8 +30,9 @@ const Home = () => {
 
       const data = await res.json();
       if (data.success === false) {
-        return setErrorMessage(data.message);
+        return setErrorMessage(data.message); 
       }
+      
 
       setLoading(false);
 
@@ -39,10 +40,21 @@ const Home = () => {
         navigate("/sign-in");
       }
     } catch (error) {
+      const timer = setTimeout(() => {
+        setErrorMessage(null);
+      }, 5000);
       setErrorMessage(error.message);
       setLoading(false);
     }
   };
+  useEffect(() => {
+    if (errorMessage) {
+      const timer = setTimeout(() => {
+        setErrorMessage(null);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [errorMessage, setErrorMessage]);
   return (
     <div className="h-screen w-full">
       <div className="h-full flex-col flex justify-center items-center">
