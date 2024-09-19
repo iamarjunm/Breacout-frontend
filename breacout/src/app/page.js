@@ -99,7 +99,7 @@ const Home = () => {
           <h1 className=" text-center">
             <span className="text-2xl font-semibold">WELCOME TO</span>
             <br />
-            <span className="text-6xl custom-font font-bold">BREACOUT</span>
+            <span className="text-7xl custom-font font-extrabold">BREACOUT</span>
           </h1>
         </div>
         <div>
